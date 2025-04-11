@@ -1,1 +1,3 @@
 .ipynb_checkpoints
+.model1.pkl
+.tfidf_vectorizer1.pkl

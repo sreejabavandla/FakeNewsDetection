@@ -34,5 +34,5 @@ Hey there! This is a simple project I built to detect whether a news article is 
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/yourname/fake-news-detector
+   git clone https://github.com/sreejabavandla/FakeNewsDetection/
    cd fake-news-detector

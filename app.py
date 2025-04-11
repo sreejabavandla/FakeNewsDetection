@@ -30,7 +30,7 @@ if mode == "📝 Paste News Text":
     user_input = st.text_area("Paste your news article here")
 
 elif mode == "🛰️ Use Live News":
-    newsapi = NewsApiClient(api_key='1d2b5ee3098a4cdf88d81d30bb91cc92')  # Replace with your API key
+    newsapi = NewsApiClient(api_key='api')  # Replace with your API key
     top_headlines = newsapi.get_top_headlines(language='en', country='us', page_size=20)
     options = [article['title'] for article in top_headlines['articles']]
     user_input = st.selectbox("Choose a live news headline", options)

@@ -2,8 +2,11 @@ import streamlit as st
 from newsapi import NewsApiClient
 import re, string, pickle
 from nltk.corpus import stopwords
+import nltk
+nltk.download('stopwords')
 import numpy as np
 from textblob import TextBlob
+import os
 
 # Load model and vectorizer
 with open('model.pkl', 'rb') as f:
@@ -30,7 +33,7 @@ if mode == "📝 Paste News Text":
     user_input = st.text_area("Paste your news article here")
 
 elif mode == "🛰️ Use Live News":
-    newsapi = NewsApiClient(api_key='api')  # Replace with your API key
+    newsapi = NewsApiClient(api_key=os.environ.get("NEWS_API_KEY"))  # Replace with your API key
     top_headlines = newsapi.get_top_headlines(language='en', country='us', page_size=20)
     options = [article['title'] for article in top_headlines['articles']]
     user_input = st.selectbox("Choose a live news headline", options)
